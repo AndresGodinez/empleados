@@ -1,0 +1,1 @@
+$('#menssageSession').addClass('animated fadeOut');
