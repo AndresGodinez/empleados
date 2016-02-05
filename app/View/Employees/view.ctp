@@ -26,7 +26,13 @@
 	</div>	
 </div>
 <div class="col-md-12">
-	<div class="col-md-6 well">
+	<div class="col-md-6 well dr2 thumbnail">
+<?php echo $this->Html->image('../files/employee/foto/'.$employee['Employee']['foto_dir'].'/'.'thumb_'.$employee['Employee']['foto'],array(
+			'class'=>'dr2'
+			)
+		); ?>&nbsp;
+		<br>
+		<br><br>
 		ID: <strong>	<?php echo h($employee['Employee']['id']); ?> </strong> <br>
 		Nombre: <strong> <?php echo h($employee['Employee']['name']); ?> </strong>	<br>
 		Direccion: <strong><?php echo h($employee['Employee']['addres']); ?></strong> <br>

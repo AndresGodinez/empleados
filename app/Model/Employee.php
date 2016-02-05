@@ -56,6 +56,47 @@ class Employee extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'foto'=>array(
+			'uploadError'=>array(
+				'rule'=>'uploadError',
+				'message'=>'Algo anda Mal intenta nuevamente',
+				'on'=>'create'
+				),
+			'isUnderPhpSizeLimit'=>array(
+				'rule'=>'isUnderPhpSizeLimit',
+				'message'=>'Excede el limite de tamaño de imagen'
+				),
+			'isValidMimeType'=>array(
+				'rule'=>array(
+					'isValidMimeType', array(
+						'image/jpeg',
+						'image/png'
+						),
+					false
+					),
+				'message'=>'Unicamente archivos JPG y PNG'
+				),
+			'isBelowMaxSize'=>array(
+				'rule'=>array(
+					'isBelowMAxSize',1048576
+					),
+				'message'=>'El Archivo es Demasiado Grande'
+				),
+			'isValidExtension'=>array(	
+				'rule'=>array('isValidExtension', array( 
+					'jpg', 'png'
+					),
+				false
+				),
+				'message'=>'No es un tipo de formato válido'
+			),
+			'checkUniqueName'=>array(
+				'rule'=>array('checkUniqueName'
+					),
+				'message'=>'Imagen ya registrada',
+				'on'=>'update'
+				),
+			),
 		'telephone' => array(
 			'phone' => array(
 				'rule' => array('numeric'),

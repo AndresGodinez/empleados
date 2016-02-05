@@ -14,7 +14,11 @@ class PositionsController extends AppController {
  * @var array
  */
 	public $components = array('Paginator');
-
+	public $paginate= array(
+		'limit'=>1,
+		'order'=>array(
+			'Position.id'=>'asc')
+		);
 /**
  * index method
  *
@@ -22,7 +26,10 @@ class PositionsController extends AppController {
  */
 	public function index() {
 		$this->Position->recursive = 0;
-		$this->set('positions', $this->Paginator->paginate());
+		$this->paginate['Position']['limit']=20;
+		$this->paginate['Position']['order']=array('Position.id'=>'asc');
+		$this->Paginator->settings = $this->paginate;
+		$this->set('positions', $this->paginate());
 	}
 
 /**
@@ -34,7 +41,7 @@ class PositionsController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Position->exists($id)) {
-			throw new NotFoundException(__('Invalid position'));
+			throw new NotFoundException(__('Datos inválidos'));
 		}
 		$options = array('conditions' => array('Position.' . $this->Position->primaryKey => $id));
 		$this->set('position', $this->Position->find('first', $options));
@@ -49,10 +56,15 @@ class PositionsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Position->create();
 			if ($this->Position->save($this->request->data)) {
-				$this->Session->setFlash(__('The position has been saved.'));
+				$this->Session->setFlash('El puesto ha sido guardado.','default', array(
+					'class'=>'alert alert-info animated fadeOut'
+					));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The position could not be saved. Please, try again.'));
+				$this->Session->setFlash('El puesto no ha podido ser guardado','default', array(
+					'class'=>'alert alert-dangger animated fadeOut'
+
+					));
 			}
 		}
 	}
@@ -66,14 +78,19 @@ class PositionsController extends AppController {
  */
 	public function edit($id = null) {
 		if (!$this->Position->exists($id)) {
-			throw new NotFoundException(__('Invalid position'));
+			throw new NotFoundException(__('Datos inválidos'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Position->save($this->request->data)) {
-				$this->Session->setFlash(__('The position has been saved.'));
+				$this->Session->setFlash('El puesto ha sido actualizado','default', array(
+					'class'=>'alert alert-info animated fadeOut'
+
+					));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The position could not be saved. Please, try again.'));
+				$this->Session->setFlash('El puesto no ha podido ser actualizado.','default', array(
+					'class'=>'alert alert-dangger animated fadeOut'
+					));
 			}
 		} else {
 			$options = array('conditions' => array('Position.' . $this->Position->primaryKey => $id));
@@ -91,13 +108,17 @@ class PositionsController extends AppController {
 	public function delete($id = null) {
 		$this->Position->id = $id;
 		if (!$this->Position->exists()) {
-			throw new NotFoundException(__('Invalid position'));
+			throw new NotFoundException(__('Datos inválidos'));
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Position->delete()) {
-			$this->Session->setFlash(__('The position has been deleted.'));
+			$this->Session->setFlash('El puesto ha sido eliminado', 'default', array(
+					'class'=>'alert alert-info animated fadeOut'
+				));
 		} else {
-			$this->Session->setFlash(__('The position could not be deleted. Please, try again.'));
+			$this->Session->setFlash('El puesto no ha podido ser eliminado', 'default', array(
+					'class'=>'alert alert-info animated fadeOut'
+				));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

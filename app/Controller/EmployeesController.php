@@ -15,6 +15,13 @@ class EmployeesController extends AppController {
  */
 	public $components = array('Paginator');
 
+    public $paginate = array(
+        'limit' => 1,
+        'order' => array(
+            'Employee.id' => 'asc'
+        )
+    );
+
 /**
  * index method
  *
@@ -22,7 +29,12 @@ class EmployeesController extends AppController {
  */
 	public function index() {
 		$this->Employee->recursive = 0;
-		$this->set('employees', $this->Paginator->paginate());
+		$this->paginate['Employee']['limit']=15;
+		$this->paginate['Employee']['order']=array(
+			'Employee.id'=>'asc'
+			);
+		$this->Paginator->settings = $this->paginate;
+		$this->set('employees', $this->paginate());
 	}
 
 /**
@@ -34,7 +46,7 @@ class EmployeesController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Employee->exists($id)) {
-			throw new NotFoundException(__('Invalid employee'));
+			throw new NotFoundException(__('Datos inválidos'));
 		}
 		$options = array('conditions' => array('Employee.' . $this->Employee->primaryKey => $id));
 		$this->set('employee', $this->Employee->find('first', $options));
@@ -49,10 +61,15 @@ class EmployeesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Employee->create();
 			if ($this->Employee->save($this->request->data)) {
-				$this->Session->setFlash(__('The employee has been saved.'));
+				$this->Session->setFlash('El empleado ha sido guardado.', 'default', array(
+					'class'=>'alert alert-info animated fadeOut'
+					));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The employee could not be saved. Please, try again.'));
+				$this->Session->setFlash('El empleado no pudo ser agregado','default', array(
+					'class'=>'alert alert-dangger animated fadeOut'
+
+					));
 			}
 		}
 		$cementeries = $this->Employee->Cementery->find('list');
@@ -69,14 +86,19 @@ class EmployeesController extends AppController {
  */
 	public function edit($id = null) {
 		if (!$this->Employee->exists($id)) {
-			throw new NotFoundException(__('Invalid employee'));
+			throw new NotFoundException(__('Datos inválidos'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Employee->save($this->request->data)) {
-				$this->Session->setFlash(__('The employee has been saved.'));
+				$this->Session->setFlash('El empleado ha sido Actualizado','default', array(
+					'class'=>'alert alert-info animated fadeOut'
+					));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The employee could not be saved. Please, try again.'));
+				$this->Session->setFlash('El empleado no pudo ser guardado.','default',array(
+					'class'=>'alert alert-dangger animated fadeOut'
+
+					));
 			}
 		} else {
 			$options = array('conditions' => array('Employee.' . $this->Employee->primaryKey => $id));
@@ -97,13 +119,17 @@ class EmployeesController extends AppController {
 	public function delete($id = null) {
 		$this->Employee->id = $id;
 		if (!$this->Employee->exists()) {
-			throw new NotFoundException(__('Invalid employee'));
+			throw new NotFoundException(__('Datos inválidos'));
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Employee->delete()) {
-			$this->Session->setFlash(__('The employee has been deleted.'));
+			$this->Session->setFlash('El empleado ha sido eliminado','default', array(
+					'class'=>'alert alert-info animated fadeOut'
+				));
 		} else {
-			$this->Session->setFlash(__('The employee could not be deleted. Please, try again.'));
+			$this->Session->setFlash('El empleado no ha podido ser eliminado, intente nuevamente', 'default',array(
+					'class'=>'alert alert-dangger animated fadeOut'
+				));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

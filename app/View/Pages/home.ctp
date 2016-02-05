@@ -1,5 +1,5 @@
 <?php $this->Html->script('holder.min'); ?>
-<div class="col-md-12">     
+
     <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -11,31 +11,36 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <?php echo $this->Html->image('/img/imgHome/1.jpg', array('alt'=>'Panteon_Municipal')); ?>
           <div class="container">
             <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              <h1>Secreatría de Servicios Públicos.</h1>
+              <p>Nos ubicamos en el interior del mercado San Juan 2, mejor conocido como "Mercado de los laureles", en la seunda planta, en la secretaría de Servicios públicos.
+              </p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Ingreso Usuarios</a></p>
             </div>
           </div>
         </div>
         <div class="item">
-          <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+          <?php echo $this->Html->image('/img/imgHome/2.jpg', array(
+            'alt'=>'Panteon_Municipal', 
+            'id'=>'img-carousel',
+            'height'=>'100%'
+            )); ?>
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              <h1>Panteón Jardín</h1>
+              <p>Fundado en el año de 1951, concentra gran historía del estado de Chiapas, encontrando tumbas de celebridades importantes, fuerzas especiales alchon 121, prof. San sebastian </p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Leer mas</a></p>
             </div>
           </div>
         </div>
         <div class="item">
-          <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+          <?php echo $this->Html->image('/img/imgHome/3.jpg', array('alt'=>'Panteon_Jardín')); ?>
           <div class="container">
             <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <h1>Panteón Jardín.</h1>
+              <p>Fundado en 1951 cuenta con gran historía, encontrandose lapidas de diversas arquitecturas.</p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
             </div>
           </div>
@@ -43,33 +48,55 @@
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+        <span class="sr-only">Anterior</span>
       </a>
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
+        <span class="sr-only">Siguiente</span>
       </a>
     </div><!-- /.carousel -->
-</div>
+
 
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing">
+    <div class="container marketing col-md-12">
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <?php echo $this->Html->image('/img/imgHome/manos.jpg', 
+            array(
+                'alt'=>'Perpetuidades', 
+                'whidth'=>'140', 
+                'height'=>'140',
+                'class'=>'img-circle'
+                )
+              ); ?>
+          <h2>Servicios</h2>
+            <ul class="list-group">
+              <li class="list-group-item">Perpetuidades</li>
+              <li class="list-group-item">inhumacion</li>
+              <li class="list-group-item">Exhumación</li>
+              <li class="list-group-item">Traspasos</li>
+              <li class="list-group-item">Fosa</li>
+            </ul>
+            <br>
+          <p><a class="btn btn-default" href="#" role="button">Más Información &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          <?php echo $this->Html->image('/img/imgHome/panteon-frances.jpg', 
+            array(
+                'alt'=>'Nuestros_Panteones', 
+                'whidth'=>'140', 
+                'height'=>'140',
+                'class'=>'img-circle'
+                )
+              ); ?>
+
+          <h2>Historia de Nuestros Panteones</h2>
+          <p class='justified'>Los panteones de nuestra ciudad cuentan con varias historias importantes, se encuentran personajes ilustres dentro de las instalciones, uno de los principales personajes, el el Prof. Teodomiro Palacios quien donó las instalaciones donde actualmente se encuentra ubicado el palacio municipal, Sr. Sebastian Escobar quien donó el terreno donde actulmente se encuentra el mercado de mismo nombre</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
@@ -118,7 +145,7 @@
           <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
         </div>
       </div>
-
+</div>
       <hr class="featurette-divider">
 
       <!-- /END THE FEATURETTES -->
