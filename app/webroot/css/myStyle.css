@@ -137,3 +137,8 @@ dd {
   -vendor-animation-delay: 2s;
   -vendor-animation-iteration-count: infinite;
 }
+.squareImage
+{
+  height: 400px;
+  width:400px;
+}

@@ -100,10 +100,17 @@
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+         <?php echo $this->Html->image('/img/imgHome/panteon-frances.jpg', 
+            array(
+                'alt'=>'Nuestros_Panteones', 
+                'whidth'=>'140', 
+                'height'=>'140',
+                'class'=>'img-circle'
+                )
+              ); ?>
           <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p>El servicio de inhumación, tendrá que ser realiado en las proximas 48 horas, será realizado por alguna funeraria, en casos exepcionales serán inhumados en fechas posteriores a las marcadas, esas indicaciones serán acatadas por el ministerio público en caso de requerir de forma precencial el cadáver. </p>
+          <p><a class="btn btn-default" href="#" role="button">Ver más detalles.</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
@@ -114,11 +121,14 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Panteón Jardín<span class="text-muted">Fundado en 1958.</span></h2>
+          <p class="lead">Este panteón cuenta con 18 hectareas de terreno, con mas de 29 000 inhumaciones registradas, con perpetuidades actuallizadas, y con un 30% de esa cantidad de inhumaciones sin registros.</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <?php echo $this->Html->image('/img/imgHome/panteon-frances.jpg', array(
+            'alt'=>'panteon_jardin',
+            'class'=>'squareImage'
+          )) ?>
         </div>
       </div>
 
@@ -126,25 +136,21 @@
 
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Panteón Municipal <span class="text-muted">fundado en 1953.</span></h2>
+          <p class="lead">Fundado en 1953, fue el primer panteón fundado en el municipio constitucional de Tapachula Chiapas, se cuenta que se tealizaban inhumaciones antes de que este predio fuera considerado panteón de manera oficial.</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <?php echo $this->Html->image('/img/imgHome/manos.jpg',
+          array(
+              'class'=>'squareImage',
+              'alt'=>'PanteónMunicipal'
+          ));  ?>
         </div>
       </div>
 
       <hr class="featurette-divider">
 
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
+      
 </div>
       <hr class="featurette-divider">
 
@@ -153,8 +159,8 @@
 
       <!-- FOOTER -->
       <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2015 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p class="pull-right"><a href="#">Volver arriba</a></p>
+        <p>&copy; 2016 Andrés Godínez Company, Inc. &middot; <a href="aressama.blogspot-mx">Contacto</a> &middot; </p>
       </footer>
 
     </div>
