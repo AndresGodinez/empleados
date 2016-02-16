@@ -33,7 +33,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				'myStyle.css',
 				'bootstrap.min',
 				'bootstrap-theme.min',
-				'animate.css'
+				'animate.css',
+				'fileinput.min'
 				)
 			);
 		echo $this->Html->script(
@@ -41,16 +42,22 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				'jquery.min',
 				'docs.min',
 				'bootstrap.min',
-				'scriptControl'
+				'scriptControl',
+				'fileinput.min'
 				)
 			);
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+	<script type="text/javascript">
+		$('#foto').fileinput();
+
+	</script>
 
 </head>
 <body>
+
 
  <?php echo $this->element('menu'); ?>
 

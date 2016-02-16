@@ -1,4 +1,8 @@
-<?php echo $this->Form->create('Employee'); ?>
+<?php echo $this->Form->create('Employee', array(
+			'type'=>'file', 
+			'novalidate'=>'novalidate'
+			)
+		); ?>
 <div class="page-header">
 	<h2>Actualizar Empleado</h2>
 </div>
@@ -49,6 +53,24 @@
 				'class'=>'form-control'
 				)
 			);
+
+		echo $this->Form->input('foto',
+			array(
+				'label'=>'Foto',
+				'type'=>'file',
+				'id'=>'foto',
+				'class'=>'file',
+				'data-show-upload'=>'false',
+				'data-show-caption'=>'true'
+
+
+				)
+			);
+		echo $this->Form->input('foto_dir',
+			array(
+				'type'=>'hidden'
+				)
+			);		
 		echo $this->Form->input('cementery_id', 
 			array(
 				'class'=>'form-control',

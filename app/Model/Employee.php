@@ -56,47 +56,34 @@ class Employee extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'foto'=>array(
-			'uploadError'=>array(
-				'rule'=>'uploadError',
-				'message'=>'Algo anda Mal intenta nuevamente',
-				'on'=>'create'
-				),
-			'isUnderPhpSizeLimit'=>array(
-				'rule'=>'isUnderPhpSizeLimit',
-				'message'=>'Excede el limite de tamaño de imagen'
-				),
-			'isValidMimeType'=>array(
-				'rule'=>array(
-					'isValidMimeType', array(
-						'image/jpeg',
-						'image/png'
-						),
-					false
-					),
-				'message'=>'Unicamente archivos JPG y PNG'
-				),
-			'isBelowMaxSize'=>array(
-				'rule'=>array(
-					'isBelowMAxSize',1048576
-					),
-				'message'=>'El Archivo es Demasiado Grande'
-				),
-			'isValidExtension'=>array(	
-				'rule'=>array('isValidExtension', array( 
-					'jpg', 'png'
-					),
-				false
-				),
-				'message'=>'No es un tipo de formato válido'
+		'foto' => array(
+        	'uploadError' => array(
+				'rule' => 'uploadError',
+				'message' => 'Algo anda mal, intente nuevamente',
+				'on' => 'create'
 			),
-			'checkUniqueName'=>array(
-				'rule'=>array('checkUniqueName'
-					),
-				'message'=>'Imagen ya registrada',
-				'on'=>'update'
-				),
-			),
+	    	'isUnderPhpSizeLimit' => array(
+	    		'rule' => 'isUnderPhpSizeLimit',
+	        	'message' => 'Archivo excede el límite de tamaño de archivo de subida'
+	        ),
+		    'isValidMimeType' => array(
+	    		'rule' => array('isValidMimeType', array('image/jpeg', 'image/png'), false),
+        		'message' => 'La imagen no es jpg ni png',
+	    	),
+		    'isBelowMaxSize' => array(
+	    		'rule' => array('isBelowMaxSize', 1048576),
+        		'message' => 'El tamaño de imagen es demasiado grande'
+	    	),
+		    'isValidExtension' => array(
+	    		'rule' => array('isValidExtension', array('jpg', 'png'), false),
+        		'message' => 'La imagen no tiene la extension jpg o png'
+	    	),
+		    // 'checkUniqueName' => array(
+      //           'rule' => array('checkUniqueName'),
+      //           'message' => 'La imagen ya se encuentra registrada',
+      //           'on' => 'update'
+      //   	),
+	    ),
 		'telephone' => array(
 			'phone' => array(
 				'rule' => array('numeric'),

@@ -58,7 +58,12 @@
 		echo $this->Form->input('foto',
 			array(
 				'label'=>'Foto',
-				'type'=>'file'
+				'type'=>'file',
+				'id'=>'foto',
+				'class'=>'file',
+				'data-show-upload'=>'false',
+				'data-show-caption'=>'true'
+
 
 				)
 			);
