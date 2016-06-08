@@ -160,7 +160,7 @@
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Volver arriba</a></p>
-        <p>&copy; 2016 Andrés Godínez Company, Inc. &middot; <a href="aressama.blogspot-mx">Contacto</a> &middot; </p>
+        <p>&copy; 2016 Andrés Godínez Company, Inc. &middot; <a href="http://aressama.blogspot.mx">Contacto</a> &middot; </p>
       </footer>
 
     </div>

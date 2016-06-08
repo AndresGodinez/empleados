@@ -49,6 +49,31 @@
             <li><a href="#about">Acerca de ..</a></li>
             <li><a href="#contact">Contacto</a></li>
           </ul>
+              <?php echo $this->Form->create('Employee', array(
+                'class'=>'navbar-form navbar-left',
+                'type'=>'GET',
+                'url'=>array(
+                  'controller'=>'employees', 
+                  'action'=>'search'
+                  )
+              )
+            ); ?>
+            <div class="form-group">
+              <?php echo $this->Form->input('search', array(
+                'label'=>false,
+                'div'=>false,
+                'id'=>'s',
+                'class'=>'form-control s',
+                'autocomplet'=>'off',
+                'placeholder'=>'Buscar Empleado...'
+                )); 
+              ?>
+            </div>
+            <?php echo $this->Form->button('Buscar', array(
+              'div'=>false,
+              'class'=>'btn btn-primary'
+            )); ?>
+            <?php echo $this->Form->end(); ?>
         </div><!--/.nav-collapse -->
       </div>
     </nav>

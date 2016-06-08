@@ -78,11 +78,11 @@ class Employee extends AppModel {
 	    		'rule' => array('isValidExtension', array('jpg', 'png'), false),
         		'message' => 'La imagen no tiene la extension jpg o png'
 	    	),
-		    // 'checkUniqueName' => array(
-      //           'rule' => array('checkUniqueName'),
-      //           'message' => 'La imagen ya se encuentra registrada',
-      //           'on' => 'update'
-      //   	),
+		     'checkUniqueName' => array(
+                 'rule' => array('checkUniqueName'),
+                 'message' => 'La imagen ya se encuentra registrada',
+                 'on' => 'update'
+         	),
 	    ),
 		'telephone' => array(
 			'phone' => array(
@@ -119,4 +119,17 @@ class Employee extends AppModel {
 			'order' => ''
 		)
 	);
+	function checkUniqueName($data)
+	{
+	    $isUnique = $this->find('first', array('fields' => array('Employee.foto'), 'conditions' => array('Employeee.foto' => $data['foto'])));
+	    if(!empty($isUnique))
+	    {
+	        return false;
+	    }
+	    else
+	    {
+	        return true;
+	    }
+	}
+
 }

@@ -34,7 +34,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				'bootstrap.min',
 				'bootstrap-theme.min',
 				'animate.css',
-				'fileinput.min'
+				'fileinput.min',
+				'jquery-ui.min'
 				)
 			);
 		echo $this->Html->script(
@@ -43,7 +44,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				'docs.min',
 				'bootstrap.min',
 				'scriptControl',
-				'fileinput.min'
+				'fileinput.min',
+				'jquery-ui.min'
 				)
 			);
 		echo $this->fetch('meta');
@@ -51,8 +53,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->fetch('script');
 	?>
 	<script type="text/javascript">
-		$('#foto').fileinput();
-
+		$("#foto").fileinput();
+		var basePath = "<?php echo Router::url('/'); ?>";
 	</script>
 
 </head>

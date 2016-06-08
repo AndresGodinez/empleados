@@ -16,7 +16,7 @@ class EmployeesController extends AppController {
 	public $components = array('Paginator');
 
     public $paginate = array(
-        'limit' => 1,
+        'limit' => 10,
         'order' => array(
             'Employee.id' => 'asc'
         )
@@ -29,7 +29,7 @@ class EmployeesController extends AppController {
  */
 	public function index() {
 		$this->Employee->recursive = 0;
-		$this->paginate['Employee']['limit']=15;
+		$this->paginate['Employee']['limit']=10;
 		$this->paginate['Employee']['order']=array(
 			'Employee.id'=>'asc'
 			);
@@ -75,6 +75,32 @@ class EmployeesController extends AppController {
 		$cementeries = $this->Employee->Cementery->find('list');
 		$positions = $this->Employee->Position->find('list');
 		$this->set(compact('cementeries', 'positions'));
+	}
+	public function searchjson()
+	{
+		$term=null;
+		if(!empty($this->request->query['term']))
+		{
+			$term=$this->request->query['term'];
+			$terms=explode(' ', trim($term));
+			$terms=array_diff($terms,array(''));
+			foreach ($terms as $term) {
+				$conditions[]=array('Employee.name LIKE' => '%' . $term . '%');
+			}
+			$employees = $this->Employee->find('all', array(
+				'recursive'=>-1,
+				'fields'=> array(
+					'Employee.id',
+					'Employee.name',
+					'Employee.foto',
+					'Employee.foto_dir'
+					),
+				'conditions'=>$conditions, 
+				'limit'=>20
+				));
+		}
+		echo json_encode($employees);
+		$this->autoRender= false;
 	}
 
 /**
