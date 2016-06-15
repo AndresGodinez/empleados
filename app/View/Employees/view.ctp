@@ -27,11 +27,14 @@
 </div>
 <div class="col-md-12">
 	<div class="col-md-6 well dr2 thumbnail">
-<?php echo $this->Html->image('../files/employee/foto/'.$employee['Employee']['foto_dir'].'/'.'thumb_'.$employee['Employee']['foto'],array(
-			'class'=>'dr2'
-			)
-		); ?>&nbsp;
-		<br>
+	<!-- link con imagen foto empleado-->
+	<?php
+	echo $this->Html->link(
+		$this->Html->image('../files/employee/foto/'.$employee['Employee']['foto_dir'].'/'.'thumb_'.$employee['Employee']['foto'],array('class'=>'dr2','alt'=>'Foto de empleado')),
+		'../files/employee/foto/'.$employee['Employee']['foto_dir'].'/'.''.$employee['Employee']['foto'], array('escape'=>false));
+	?>
+	<!-- 	fin link con imagen empleado -->
+	<br>
 		<br><br>
 		ID: <strong>	<?php echo h($employee['Employee']['id']); ?> </strong> <br>
 		Nombre: <strong> <?php echo h($employee['Employee']['name']); ?> </strong>	<br>
@@ -41,6 +44,36 @@
 		Puesto: <strong> <?php echo $this->Html->link($employee['Position']['name'], array('controller' => 'positions', 'action' => 'view', $employee['Position']['id'])); ?>	</strong>	<br>
 		Creado:<strong> <?php echo h($employee['Employee']['created']); ?>	</strong>	<br>
 		Modificado:<strong> <?php echo h($employee['Employee']['modified']); ?>	</strong>	<br>
+		<br><br>
+		<h3>Credencial de Elector</h3>
+		<?php
+
+// link ine frontal
+		echo $this->Html->link(
+    	$this->Html->image('../files/employee/ine_frontal/'.$employee['Employee']['ine_frontal_dir'].'/'.'thumb_'.$employee['Employee']['ine_frontal'], array("alt" => "INE", 'class'=>'dr2')),
+    	'../files/employee/ine_frontal/'.$employee['Employee']['ine_frontal_dir'].'/'.''.$employee['Employee']['ine_frontal'],
+    		array('escape' => false)
+			);
+// fin ine frontal
+		// ine trasera
+		echo $this->Html->link($this->Html->image('../files/employee/ine_trasera/'.$employee['Employee']['ine_trasera_dir'].'/'.'thumb_'.$employee['Employee']['ine_trasera'], array('alt'=>'Ine Trasera', 'class'=>'dr2')),
+		'../files/employee/ine_trasera/'.$employee['Employee']['ine_trasera_dir'].'/'.''.$employee['Employee']['ine_trasera'], 
+		array('escape'=>false)
+		);
+		// fin ine trasera
+		// link imagen comprobante de domicilio
+		?>
+		<h3>Comprobante de Domicilio</h3>
+		<?php
+		echo $this->Html->link(
+			$this->Html->image('../files/employee/dom/'.$employee['Employee']['dom_dir'].'/'.'thumb_'.$employee['Employee']['dom'], array('alt'=>'Comprobante de domicilio', 'class'=>'dr2')),
+			'../files/employee/dom/'.$employee['Employee']['dom_dir'].'/'.$employee['Employee']['dom'],
+			array('escape'=>false)
+			);
+		// fin link imagen comprobante de domicilio
+
+?>	
+		
 	</div>
 	
 </div>

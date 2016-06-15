@@ -50,6 +50,8 @@
 		<tr>
 				<th><?php echo $this->Paginator->sort('Foto'); ?></th>
 				<th><?php echo $this->Paginator->sort('Nombre'); ?></th>
+				<th><?php echo $this->Paginator->sort('#Cobro'); ?></th>								
+				<th><?php echo $this->Paginator->sort('Apoyo'); ?></th>				
 				<th><?php echo $this->Paginator->sort('Dirección'); ?></th>
 				<th><?php echo $this->Paginator->sort('Teléfono'); ?></th>
 				<th><?php echo $this->Paginator->sort('Panteón'); ?></th>
@@ -61,11 +63,25 @@
 		<?php foreach ($employees as $employee): ?>
 		<tr>
 			<td><?php echo $this->Html->image('../files/employee/foto/'.$employee['Employee']['foto_dir'].'/'.'thumb_'.$employee['Employee']['foto'],array(
-				'class'=>'dr2'
+				'class'=>'dr2', 'width'=>'100'
 				)
 			); ?>&nbsp;</td>
 			<td><?php echo h($employee['Employee']['name']); ?>&nbsp;</td>
+			<td><?php echo h($employee['Employee']['numero_cobro']); ?>&nbsp;</td>
+			<td class="col-md-2 justified">
+				<?php 
+					if(h($employee['Employee']['apoyo'])==1)
+						{
+							echo "si";
+						}
+					else{
+							echo "no";
+						} 
+				?>&nbsp;
+			</td>			
 			<td class="col-md-2 justified"><?php echo h($employee['Employee']['addres']); ?>&nbsp;</td>
+			
+
 			<td><?php echo h($employee['Employee']['telephone']); ?>&nbsp;</td>
 			<td>
 				<?php echo $this->Html->link($employee['Cementery']['name'], array('controller' => 'cementeries', 'action' => 'view', $employee['Cementery']['id'])); ?>

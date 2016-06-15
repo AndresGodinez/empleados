@@ -34,6 +34,9 @@ body {
 .oculto2{
   display: none;
 }
+.input.checkbox.required > label{
+  font-weight: 700;
+}
 
 h1, h2, h3, h4 {
   font-weight: normal;

@@ -71,6 +71,40 @@
 				'type'=>'hidden'
 				)
 			);		
+//INE y Dirección
+		echo $this->Form->input('ife',
+			array(
+				'label'=>'INE',
+				'type'=>'file',
+				'id'=>'ife',
+				'class'=>'file',
+				'data-show-upload'=>'false',
+				'data-show-caption'=>'true'
+				)
+			);
+		echo $this->Form->input('ife_dir',
+			array(
+				'type'=>'hidden'
+				)
+			);		
+		echo $this->Form->input('dom',
+			array(
+				'label'=>'Domicilio',
+				'type'=>'file',
+				'id'=>'dom',
+				'class'=>'file',
+				'data-show-upload'=>'false',
+				'data-show-caption'=>'true'
+
+
+				)
+			);
+		echo $this->Form->input('dom_dir',
+			array(
+				'type'=>'hidden'
+				)
+			);				
+//Fin INE y Dirección
 		echo $this->Form->input('cementery_id', 
 			array(
 				'class'=>'form-control',

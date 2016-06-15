@@ -39,7 +39,14 @@
 				'placeholder'=>'Nombre'
 				)
 			);
+		echo $this->Form->input('numero_cobro',
+			array(
+				'label'=>'Número de Cobro',
+				'class'=>'form-control',
+				'placeholder'=>'Número de Cobro'
 
+				)
+			);
 		echo $this->Form->input('addres',
 			array(
 				'label'=>'Dirección',
@@ -55,6 +62,19 @@
 				'placeholder'=>'Teléfono'
 				)
 			);
+			?>
+			<div class="checkbox"  style="left: 20px;">
+			<?php
+
+		echo $this->Form->input('apoyo',
+			array(
+				'label'=>'Apoyo',
+				'class'=>'chek-box',
+				)
+			);
+			?>
+			</div>
+			<?php
 		echo $this->Form->input('foto',
 			array(
 				'label'=>'Foto',
@@ -63,15 +83,64 @@
 				'class'=>'file',
 				'data-show-upload'=>'false',
 				'data-show-caption'=>'true'
-
-
 				)
 			);
 		echo $this->Form->input('foto_dir',
 			array(
 				'type'=>'hidden'
 				)
+			);	
+
+			//campos foto
+			//nuevos campos	
+		echo $this->Form->input('ine_frontal',
+			array(
+				'label'=>'Ine Frontal',
+				'type'=>'file',
+				'id'=>'ine_frontal',
+				'class'=>'file',
+				'data-show-upload'=>'false',
+				'data-show-caption'=>'true'
+				)
+			);
+		echo $this->Form->input('ine_frontal_dir',
+			array(
+				'type'=>'hidden'
+				)
+			);//fin ine frontal
+		echo $this->Form->input('ine_trasera',
+			array(
+				'label'=>'Ine Trasera',
+				'type'=>'file',
+				'id'=>'ine_trasera',
+				'class'=>'file',
+				'data-show-upload'=>'false',
+				'data-show-caption'=>'true'
+				)
+			);
+		echo $this->Form->input('ine_trasera_dir',
+			array(
+				'type'=>'hidden'
+				)
 			);		
+			//FinIne Trasera
+		echo $this->Form->input('dom',
+			array(
+				'label'=>'Domicilio',
+				'type'=>'file',
+				'id'=>'dom',
+				'class'=>'file',
+				'data-show-upload'=>'false',
+				'data-show-caption'=>'true'
+				)
+			);
+		echo $this->Form->input('dom_dir',
+			array(
+				'type'=>'hidden'
+				)
+			); 
+		// fin campo foto de domicilio
+		//endnuevos_campos
 		echo $this->Form->input('cementery_id',
 			array(
 				'label'=>'Panteón',

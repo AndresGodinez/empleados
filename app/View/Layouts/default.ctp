@@ -55,6 +55,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<script type="text/javascript">
 		$("#foto").fileinput();
 		var basePath = "<?php echo Router::url('/'); ?>";
+		$("#ine_frontal").fileinput();
+		var basePath = "<?php echo Router::url('/'); ?>";
+		$("#ine_trasera").fileinput();
+		var basePath = "<?php echo Router::url('/'); ?>";
+		$("#dom").fileinput();
+		var basePath = "<?php echo Router::url('/'); ?>";
 	</script>
 
 </head>

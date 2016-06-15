@@ -405,13 +405,13 @@ class CakeTime {
 
 		$d = self::_strftime("%w", $date);
 		$day = array(
-			__d('cake', 'Sunday'),
-			__d('cake', 'Monday'),
-			__d('cake', 'Tuesday'),
-			__d('cake', 'Wednesday'),
-			__d('cake', 'Thursday'),
-			__d('cake', 'Friday'),
-			__d('cake', 'Saturday')
+			__d('cake', 'Domingo'),
+			__d('cake', 'Lunes'),
+			__d('cake', 'Martes'),
+			__d('cake', 'Miercoles'),
+			__d('cake', 'Jueves'),
+			__d('cake', 'Viernes'),
+			__d('cake', 'Sábado')
 		);
 		if (self::wasWithinLast('7 days', $dateString, $timezone)) {
 			return sprintf('%s %s', $day[$d], self::_strftime(self::$niceShortFormat, $date));
