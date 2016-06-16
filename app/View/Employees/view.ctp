@@ -38,6 +38,10 @@
 		<br><br>
 		ID: <strong>	<?php echo h($employee['Employee']['id']); ?> </strong> <br>
 		Nombre: <strong> <?php echo h($employee['Employee']['name']); ?> </strong>	<br>
+		#Cobro: <strong> <?php echo h($employee['Employee']['numero_cobro']); ?> </strong>	<br>
+
+		Sindicato: <strong> <?php echo $this->Html->link($employee['Syndicate']['name'], array('controller' => 'syndicates', 'action' => 'view', $employee['Syndicate']['id'])); ?>	</strong>	<br>
+
 		Direccion: <strong><?php echo h($employee['Employee']['addres']); ?></strong> <br>
 		Teléfono: <strong><?php echo h($employee['Employee']['telephone']); ?> </strong> <br>			
 		Panteón: <strong><?php echo $this->Html->link($employee['Cementery']['name'], array('controller' => 'cementeries', 'action' => 'view', $employee['Cementery']['id'])); ?></strong>	<br>	

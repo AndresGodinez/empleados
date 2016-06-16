@@ -74,7 +74,8 @@ class EmployeesController extends AppController {
 		}
 		$cementeries = $this->Employee->Cementery->find('list');
 		$positions = $this->Employee->Position->find('list');
-		$this->set(compact('cementeries', 'positions'));
+		$syndicates= $this->Employee->Syndicate->find('list');
+		$this->set(compact('cementeries', 'positions', 'syndicates'));
 	}
 	public function searchjson()
 	{
@@ -132,7 +133,8 @@ class EmployeesController extends AppController {
 		}
 		$cementeries = $this->Employee->Cementery->find('list');
 		$positions = $this->Employee->Position->find('list');
-		$this->set(compact('cementeries', 'positions'));
+		$syndicates=$this->Employee->Syndicate->find('list');
+		$this->set(compact('cementeries', 'positions', 'syndicates'));
 	}
 
 /**

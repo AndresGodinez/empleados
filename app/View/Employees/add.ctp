@@ -147,6 +147,13 @@
 				'class'=>'form-control'
 				)
 			);
+		echo $this->Form->input('syndicate_id',
+			array(
+				'label'=>'Sindicato',
+				'class'=>'form-control'
+
+				)
+			);
 		echo $this->Form->input('position_id',
 			array(
 				'label'=>'Puesto',

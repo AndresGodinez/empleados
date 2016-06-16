@@ -256,7 +256,14 @@ class Employee extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		)
+		),
+		'Syndicate'=>array(
+			'className'=>'Syndicate',
+			'foreignKey'=>'syndicate_id',
+			'conditions'=>'',
+			'fields'=>'',
+			'order'=>''
+			)
 	);
 	function checkUniqueName($data)
 	{

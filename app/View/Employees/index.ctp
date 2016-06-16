@@ -44,13 +44,14 @@
 	<div class="col-md-12">
 		&nbsp;
 	</div>
-	<div class="col-md-12">
-		<table class="table table-striped">
+	<div class="col-md-12 ">
+		<table class="table table-striped table-responsive">
 		<thead>
 		<tr>
 				<th><?php echo $this->Paginator->sort('Foto'); ?></th>
 				<th><?php echo $this->Paginator->sort('Nombre'); ?></th>
-				<th><?php echo $this->Paginator->sort('#Cobro'); ?></th>								
+				<th><?php echo $this->Paginator->sort('#Cobro'); ?></th>
+				<th><?php echo $this->Paginator->sort('Sindicato'); ?></th>								
 				<th><?php echo $this->Paginator->sort('Apoyo'); ?></th>				
 				<th><?php echo $this->Paginator->sort('Dirección'); ?></th>
 				<th><?php echo $this->Paginator->sort('Teléfono'); ?></th>
@@ -66,19 +67,24 @@
 				'class'=>'dr2', 'width'=>'100'
 				)
 			); ?>&nbsp;</td>
-			<td><?php echo h($employee['Employee']['name']); ?>&nbsp;</td>
+			<td> <strong><?php echo h($employee['Employee']['name']); ?>&nbsp;</strong></td>
 			<td><?php echo h($employee['Employee']['numero_cobro']); ?>&nbsp;</td>
+			<td>
+				<?php echo $this->Html->link($employee['Syndicate']['name'], array('controller' => 'syndicates', 'action' => 'view', $employee['Syndicate']['id'])); ?>
+
+			</td>
 			<td class="col-md-2 justified">
 				<?php 
 					if(h($employee['Employee']['apoyo'])==1)
 						{
-							echo "si";
+							echo "<strong>Si</strong>";
 						}
 					else{
-							echo "no";
+							echo "<strong>No</strong>";
 						} 
 				?>&nbsp;
 			</td>			
+
 			<td class="col-md-2 justified"><?php echo h($employee['Employee']['addres']); ?>&nbsp;</td>
 			
 

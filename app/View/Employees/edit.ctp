@@ -39,6 +39,19 @@
 				'placeholder'=>'Nombre'
 			)
 		);
+		echo $this->Form->input('numero_cobro',
+			array(
+				'label'=>'numero de Cobro',
+				'class'=>'form-control',
+
+				)
+			);
+		echo $this->Form->input('syndicate_id',
+			array(
+				'label'=>'Sindicato',
+				'class'=>'form-control'
+				)
+			);
 		echo $this->Form->input('addres',
 			array(
 				'label'=>'Dirección',
