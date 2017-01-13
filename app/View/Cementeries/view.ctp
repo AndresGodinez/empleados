@@ -1,5 +1,5 @@
 <div class="page-header">
-	<h1>Detalle Panteón</h1>
+	<h1>Detalle Secretaría</h1>
 </div>
 
 <div class="col-md 12">
@@ -13,10 +13,10 @@
 		    <span class="caret"></span>
 		  </button>
 		  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-				<li><?php echo $this->Html->link(__('Actualizar Panteón'), array('action' => 'edit', $cementery['Cementery']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Eliminar Panteón'), array('action' => 'delete', $cementery['Cementery']['id']), array(), __('Esta seguro de eliminar el panteón '.$cementery['Cementery']['name'].' ?', $cementery['Cementery']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Lista Panteones'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Nuevo Panteón'), array('action' => 'add')); ?> </li>
+				<li><?php echo $this->Html->link(__('Actualizar Secretaría'), array('action' => 'edit', $cementery['Cementery']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Eliminar Secretaría'), array('action' => 'delete', $cementery['Cementery']['id']), array(), __('Esta seguro de eliminar la secretaría '.$cementery['Cementery']['name'].' ?', $cementery['Cementery']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Lista Secretarías'), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Secretaría'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('Lista Empleados'), array('controller' => 'employees', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('Nuevo Empleado'), array('controller' => 'employees', 'action' => 'add')); ?> </li>	  
 			</ul>
@@ -50,14 +50,14 @@
 <div class="col-md-12">
 	<div class="col-md-8">
 		<div class="related">
-			<h3><?php echo __('Empleados de este panteón'); ?></h3>
+			<h3><?php echo __('Empleados de esta Secretaría'); ?></h3>
 			<?php if (!empty($cementery['Employee'])): ?>
 			<table class="table table-striped">
 			<tr>
 				<th><?php echo __('Nombre'); ?></th>
 				<th><?php echo __('Dirección'); ?></th>
 				<th><?php echo __('Teléfono'); ?></th>
-				<th><?php echo __('Panteón'); ?></th>
+				<th><?php echo __('Secretaría'); ?></th>
 				<th><?php echo __('Cargo'); ?></th>
 				<th class="actions"><?php echo __('Acciones'); ?></th>
 			</tr>

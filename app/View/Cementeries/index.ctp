@@ -18,7 +18,7 @@
  </div>
 
 <div class="page-header">
-	<h1>Panteones</h1>
+	<h1>Secretaría</h1>
 </div>
 
 <div class="col-md 12">
@@ -32,8 +32,8 @@
 		    <span class="caret"></span>
 		  </button>
 		  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-				<li><?php echo $this->Html->link(__('Nuevo Panteón'), array('action' => 'add')); ?></li>
-				<li><?php echo $this->Html->link(__('Lista Empleados'), array('controller' => 'employees', 'action' => 'index')); ?> </li>
+				<li><?php echo $this->Html->link(__('Nueva Secretaría'), array('action' => 'add')); ?></li>
+				<li><?php echo $this->Html->link(__('Lista Secretarías'), array('controller' => 'employees', 'action' => 'index')); ?> </li>
 				<li><?php echo $this->Html->link(__('Nuevo Empleado'), array('controller' => 'employees', 'action' => 'add')); ?> </li>		  
 			</ul>
 		</div>
@@ -59,7 +59,7 @@
 			<td class="actions">
 				<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $cementery['Cementery']['id'])); ?>
 				<?php echo $this->Html->link(__('Actualizar'), array('action' => 'edit', $cementery['Cementery']['id'])); ?>
-				<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $cementery['Cementery']['id']), array(), __('Esta seguro de eliminnar el panteón '.$cementery['Cementery']['name'].'?', $cementery['Cementery']['id'])); ?>
+				<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $cementery['Cementery']['id']), array(), __('Esta seguro de eliminnar la Secretaría '.$cementery['Cementery']['name'].'?', $cementery['Cementery']['id'])); ?>
 			</td>
 			</tr>
 		<?php endforeach; ?>

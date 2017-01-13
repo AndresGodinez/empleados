@@ -50,9 +50,12 @@
 		Modificado:<strong> <?php echo h($employee['Employee']['modified']); ?>	</strong>	<br>
 		<br><br>
 		<h3>Credencial de Elector</h3>
+
 		<?php
 
 // link ine frontal
+
+
 		echo $this->Html->link(
     	$this->Html->image('../files/employee/ine_frontal/'.$employee['Employee']['ine_frontal_dir'].'/'.'thumb_'.$employee['Employee']['ine_frontal'], array("alt" => "INE", 'class'=>'dr2')),
     	'../files/employee/ine_frontal/'.$employee['Employee']['ine_frontal_dir'].'/'.''.$employee['Employee']['ine_frontal'],

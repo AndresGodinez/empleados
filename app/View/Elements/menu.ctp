@@ -14,13 +14,13 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Panteones <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Secretaría <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li>
-                  <?php echo $this->Html->link('Lista Panteones', array('controller'=>'cementeries', 'action'=>'index')); ?>
+                  <?php echo $this->Html->link('Lista Secretaría', array('controller'=>'cementeries', 'action'=>'index')); ?>
                 </li>
                 <li>
-                  <?php echo $this->Html->link('Agregar Panteón',array('controller'=>'cementeries','action'=>'add')); ?>
+                  <?php echo $this->Html->link('Agregar Secretaría',array('controller'=>'cementeries','action'=>'add')); ?>
                   </li>
               </ul>
             </li>
